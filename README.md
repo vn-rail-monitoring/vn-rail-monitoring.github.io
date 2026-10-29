@@ -20,28 +20,17 @@ python3 -m http.server 8000
 
 Truy cập http://localhost:8000.
 
-## Đưa lên GitHub Pages (Organization site)
+## Triển khai GitHub Pages
 
-1. Tạo GitHub Organization với tên đăng ký thực tế, ví dụ `vn-rail-monitoring` nếu còn khả dụng.
-2. Tạo repository **Public** tên `TEN_ORG.github.io`, thay `TEN_ORG` bằng tên Organization thực tế.
-3. Upload **nội dung bên trong thư mục website này** vào root của nhánh `main`: `index.html`, `styles.css`, `script.js`, `assets/`, `.nojekyll` và `README.md`.
-4. Trong `Settings → Pages`, tại `Build and deployment → Source`, chọn **GitHub Actions**. Repository đã kèm `.github/workflows/deploy.yml` để tự động deploy mỗi lần push lên `main`.
-5. Mở tab `Actions` và kiểm tra workflow **Publish RAIL MONITOR to GitHub Pages** hoàn tất thành công. Website sẽ hiển thị tại `https://TEN_ORG.github.io/`.
+Website được xuất bản tại **https://vn-rail-monitoring.github.io/** từ repository
+`vn-rail-monitoring/vn-rail-monitoring.github.io`.
 
-Nếu chọn `Deploy from a branch` thay vì GitHub Actions, có thể cấu hình nguồn `main / (root)` do mã nguồn website đã nằm sẵn ở thư mục gốc. Không sử dụng đồng thời hai cách triển khai.
+- Repository: **Public**.
+- Nguồn xuất bản: **Deploy from a branch**, nhánh **`main`**, thư mục **`/ (root)`**.
+- Mỗi lần cập nhật nhánh `main`, GitHub Pages tự xây dựng và xuất bản lại website.
+- Xem kết quả tại tab `Actions` → **pages build and deployment**.
 
-Nếu sử dụng `git`, tại thư mục này:
-
-```sh
-git init
-git add .
-git commit -m "Initial Rail Monitor website"
-git branch -M main
-git remote add origin https://github.com/TEN_ORG/TEN_ORG.github.io.git
-git push -u origin main
-```
-
-Bạn cần thay thế tên Organization bằng tên được đăng ký trên GitHub, có quyền tạo repository và quyền cấu hình Pages.
+Trang sử dụng HTML/CSS/JavaScript tĩnh, không cần npm, build hay backend.
 
 ## Cấu trúc
 
@@ -54,7 +43,6 @@ assets/
   images/       # WebP được tạo trước và lưu lại
   diagrams/     # SVG có thể chỉnh sửa
 README.md
-.github/workflows/deploy.yml
 ```
 
 ## Điều chỉnh nội dung
