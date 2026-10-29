@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#071b33" />
+  <meta name="description" content="RAIL MONITOR — giới thiệu định hướng nghiên cứu hệ thống theo dõi, giám sát hành trình đoàn tàu thời gian thực ứng dụng IoT, GIS và AI tại Việt Nam." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="RAIL MONITOR | Giám sát hành trình đoàn tàu thông minh" />
+  <meta property="og:description" content="Nghiên cứu giải pháp theo dõi hành trình đoàn tàu theo thời gian thực với IoT, GIS và AI." />
+  <meta property="og:image" content="assets/images/railway-hero.webp" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="assets/diagrams/rail-mark.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+  <title>RAIL MONITOR — IoT · GIS · AI cho đường sắt thông minh</title>
+</head>
+<body>
+  <a class="skip-link" href="#noi-dung">Bỏ qua điều hướng</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <header class="site-header" id="siteHeader">
+    <div class="nav-wrap container">
+      <a class="brand" href="#trang-chu" aria-label="Rail Monitor — về trang chủ">
+        <span class="brand-icon"><svg viewBox="0 0 36 36" aria-hidden="true"><use href="#i-train" /></svg></span>
+        <span class="brand-name"><strong>RAIL<span>MONITOR</span></strong><small>IoT · GIS · AI cho đường sắt Việt Nam</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Điều hướng chính">
+        <a href="#tong-quan">Tổng quan</a>
+        <a href="#cong-nghe">Công nghệ</a>
+        <a href="#kien-truc">Kiến trúc</a>
+        <a href="#tinh-nang">Tính năng</a>
+        <a href="#san-pham">Sản phẩm</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#lien-he" class="nav-cta">Khám phá dự án <span aria-hidden="true">↗</span></a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Điều hướng trên di động" hidden>
+      <a href="#tong-quan">Tổng quan</a><a href="#cong-nghe">Công nghệ</a><a href="#kien-truc">Kiến trúc</a><a href="#tinh-nang">Tính năng</a><a href="#mo-phong">Mô phỏng</a><a href="#san-pham">Sản phẩm</a><a href="#lien-he">Kết nối</a>
+    </nav>
+  </header>
+
+  <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-train" viewBox="0 0 36 36"><rect x="9" y="4" width="18" height="24" rx="6" fill="none" stroke="currentColor" stroke-width="2.3"/><path d="M10 15h16M13 28l-4 5M23 28l4 5M13 33h10M13.5 9h9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/><circle cx="14" cy="22" r="1.7" fill="currentColor"/><circle cx="22" cy="22" r="1.7" fill="currentColor"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-location" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" stroke="currentColor" fill="none" stroke-width="1.8"/><circle cx="12" cy="10" r="2.2" stroke="currentColor" fill="none" stroke-width="1.8"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12a10.6 10.6 0 0 1 14 0m-11 3a6.5 6.5 0 0 1 8 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="19" r="1.6" fill="currentColor"/></symbol>
+    <symbol id="i-brain" viewBox="0 0 24 24"><path d="M12 5a4 4 0 0 0-7 2 4 4 0 0 0-1 6 4 4 0 0 0 3 6c1 3 5 2 5-1V5Zm0 0a4 4 0 0 1 7 2 4 4 0 0 1 1 6 4 4 0 0 1-3 6c-1 3-5 2-5-1V5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 9c2 1 2 3 2 4m-3 2 3-1m6-5c-2 1-2 3-2 4m3 2-3-1" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Zm6-3v15m6-12v15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7" fill="none"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7" fill="none"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7" fill="none"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7" fill="none"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3" stroke="currentColor" stroke-width="1.7" fill="none"/><path d="M4 5v14c0 1.8 3.6 3 8 3s8-1.2 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" stroke="currentColor" stroke-width="1.7" fill="none"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 20V4m0 16h18M7 16l4-6 3 2 6-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 9 4v6c0 6-3 8-9 10-6-2-9-4-9-10V6l9-4Z" stroke="currentColor" stroke-width="1.7" fill="none"/><path d="m8 12 3 3 5-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="8" rx="2" stroke="currentColor" stroke-width="1.7" fill="none"/><rect x="3" y="13" width="18" height="8" rx="2" stroke="currentColor" stroke-width="1.7" fill="none"/><circle cx="7" cy="7" r="1" fill="currentColor"/><circle cx="7" cy="17" r="1" fill="currentColor"/><path d="M12 7h6m-6 10h6" stroke="currentColor" stroke-width="1.7"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2Z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 0v6h5M8 13h8m-8 4h8" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M2 21v-2a7 7 0 0 1 14 0v2M17 5a4 4 0 0 1 0 8m1 3a6 6 0 0 1 4 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><path d="M10 2h4l.7 2.6 2 1.1 2.6-.8 2 3.5-1.9 2 .1 2.3 1.8 1.9-2 3.5-2.6-.8-2 1.1L14 22h-4l-.7-2.6-2-1.1-2.6.8-2-3.5 1.9-2-.1-2.3-1.8-1.9 2-3.5 2.6.8 2-1.1L10 2Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  </svg>
+
+  <main id="noi-dung">
+    <section class="hero" id="trang-chu" aria-labelledby="heroTitle">
+      <div class="hero-background"></div><div class="hero-mesh" aria-hidden="true"></div>
+      <div class="container hero-layout">
+        <div class="hero-content">
+          <div class="eyebrow eyebrow--light"><span class="pulse-dot"></span> NGHIÊN CỨU · CÔNG NGHỆ · ĐƯỜNG SẮT</div>
+          <h1 id="heroTitle">Kết nối dữ liệu.<br /><em>Kiến tạo</em> hành trình<br />đường sắt thông minh.</h1>
+          <p class="hero-lead">Nghiên cứu hệ thống theo dõi, giám sát hành trình đoàn tàu theo thời gian thực, ứng dụng <strong>IoT, GIS và AI</strong> để hỗ trợ quản lý và điều hành vận tải đường sắt.</p>
+          <div class="hero-buttons"><a href="#tong-quan" class="btn btn-primary">Khám phá giải pháp <svg aria-hidden="true"><use href="#i-arrow"/></svg></a><a href="#kien-truc" class="btn btn-ghost">Khám phá kiến trúc <span aria-hidden="true">↗</span></a></div>
+          <div class="hero-footnote"><span class="hero-signal" aria-hidden="true"><i></i><i></i><i></i><i></i></span> Từ thiết bị trên tàu đến nền tảng quản lý tập trung</div>
+        </div>
+        <div class="hero-floating" aria-label="Các trụ cột công nghệ"><span class="float-dash"></span><span class="float-label">NỀN TẢNG CÔNG NGHỆ</span><div><span>IoT</span><span>GIS</span><span>AI</span></div></div>
+      </div>
+      <div class="hero-bottom container"><span>01 / GIỚI THIỆU DỰ ÁN</span><span class="scroll-prompt">CUỘN ĐỂ KHÁM PHÁ <span aria-hidden="true">↓</span></span></div>
+    </section>
+
+    <section class="metric-bar" aria-label="Định hướng và chỉ tiêu nhiệm vụ"><div class="container metrics-grid">
+      <div class="metric"><span class="metric-num">03</span><span class="metric-label">Công nghệ chủ đạo <small>IoT · GIS · AI</small></span></div>
+      <div class="metric"><span class="metric-num">01</span><span class="metric-label">Hệ thống hướng tới <small>Giám sát thời gian thực</small></span></div>
+      <div class="metric"><span class="metric-num">02<span class="metric-plus">+</span></span><span class="metric-label">Đoàn tàu thử nghiệm <small>Chỉ tiêu tối thiểu dự kiến</small></span></div>
+      <div class="metric"><span class="metric-num">02<span class="metric-plus">+</span></span><span class="metric-label">Tuyến đường sắt <small>Chỉ tiêu tối thiểu dự kiến</small></span></div>
+    </div></section>
+
+    <section class="section overview-section" id="tong-quan" aria-labelledby="overviewTitle"><div class="container overview-grid">
+      <div class="overview-image reveal"><img src="assets/images/railway-landscape.webp" alt="Ảnh minh họa bằng AI: đoàn tàu di chuyển qua cầu đường sắt giữa cảnh quan núi hồ" loading="lazy" /><div class="image-corner"><span class="image-corner-num">01</span><span>Chuyển đổi số<br />trong vận tải đường sắt</span></div><span class="photo-label">ẢNH MINH HỌA AI</span></div>
+      <div class="overview-copy reveal"><div class="section-kicker"><span class="kicker-line"></span> 01 — TỔNG QUAN DỰ ÁN</div><h2 id="overviewTitle">Từ dữ liệu hành trình đến <span class="gradient-text">góc nhìn toàn diện.</span></h2><p class="body-lead">Hướng tới khả năng quan sát hành trình đoàn tàu tập trung, trực quan và liên tục trên một nền tảng bản đồ số.</p><p>Dự án tập trung nghiên cứu giải pháp tích hợp dữ liệu từ các thiết bị lắp đặt trên tàu với hệ thống phần mềm trung tâm. Thông tin vị trí, trạng thái hoạt động và dữ liệu cảm biến được thu thập, tiền xử lý, truyền tải và trực quan hóa, nhằm phục vụ công tác quản lý, giám sát và điều hành đường sắt.</p>
+      <div class="overview-bullets"><div><span class="checkmark">✓</span><span>Dữ liệu hành trình được tổ chức và quản lý tập trung</span></div><div><span class="checkmark">✓</span><span>Giám sát trên nền tảng bản đồ số GIS</span></div><div><span class="checkmark">✓</span><span>Hỗ trợ phân tích và ra quyết định bằng AI</span></div></div></div>
+    </div></section>
+
+    <section class="section tech-section" id="cong-nghe" aria-labelledby="techTitle"><div class="container"><div class="section-heading centered reveal"><div class="section-kicker"><span class="kicker-line"></span> 02 — CÔNG NGHỆ CỐT LÕI</div><h2 id="techTitle">Ba công nghệ. <span class="gradient-text">Một nền tảng kết nối.</span></h2><p>Sự kết hợp của cảm biến kết nối, bản đồ số và trí tuệ nhân tạo là nền tảng nghiên cứu của giải pháp.</p></div>
+    <div class="tech-cards"><article class="tech-card tech-card--iot reveal"><div class="tech-card-top"><span class="tech-icon"><svg><use href="#i-wifi"/></svg></span><span class="tech-tag">01 / DATA</span></div><div class="tech-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><h3>Internet of Things <span>(IoT)</span></h3><p>Thu thập và tiền xử lý dữ liệu từ các thiết bị trên tàu, hỗ trợ truyền dữ liệu về trung tâm thông qua kết nối 3G/4G.</p><div class="tech-chips"><span>GPS / GNSS</span><span>IMU</span><span>Camera AI</span></div></article>
+    <article class="tech-card tech-card--gis reveal"><div class="tech-card-top"><span class="tech-icon"><svg><use href="#i-map"/></svg></span><span class="tech-tag">02 / VISUAL</span></div><div class="tech-map-art" aria-hidden="true"><span class="map-route"></span><span class="map-p map-p1"></span><span class="map-p map-p2"></span><span class="map-p map-p3"></span></div><h3>Geographic Information <span>(GIS)</span></h3><p>Biểu diễn vị trí, hành trình và trạng thái đoàn tàu trên bản đồ số, tạo giao diện trực quan cho công tác theo dõi.</p><div class="tech-chips"><span>Bản đồ số</span><span>Vị trí</span><span>Hành trình</span></div></article>
+    <article class="tech-card tech-card--ai reveal"><div class="tech-card-top"><span class="tech-icon"><svg><use href="#i-brain"/></svg></span><span class="tech-tag">03 / INTELLIGENCE</span></div><div class="tech-ai-art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><h3>Artificial Intelligence <span>(AI)</span></h3><p>Nghiên cứu các phương pháp hỗ trợ dự báo thời gian đi/đến ga, phát hiện bất thường và hỗ trợ điều hành.</p><div class="tech-chips"><span>Dự báo</span><span>Phân tích</span><span>Hỗ trợ quyết định</span></div></article></div>
+    </div></section>
+
+    <section class="section architecture-section" id="kien-truc" aria-labelledby="architectureTitle"><div class="container"><div class="architecture-head reveal"><div><div class="section-kicker section-kicker--light"><span class="kicker-line"></span> 03 — KIẾN TRÚC HỆ THỐNG</div><h2 id="architectureTitle">Một luồng dữ liệu.<br/><span>Liên kết toàn hệ thống.</span></h2></div><p>Kiến trúc định hướng kết nối thiết bị đo trên đoàn tàu, mạng truyền thông di động và phần mềm trung tâm phục vụ giám sát, xử lý, phân tích dữ liệu.</p></div>
+      <div class="arch-step-row"><div class="arch-step reveal"><span>01</span><svg><use href="#i-train"/></svg><div><strong>Thiết bị trên tàu</strong><small>Cảm biến · Định vị · Camera</small></div></div><div class="arch-connector">→</div><div class="arch-step reveal"><span>02</span><svg><use href="#i-wifi"/></svg><div><strong>Truyền thông</strong><small>Kết nối 3G/4G</small></div></div><div class="arch-connector">→</div><div class="arch-step reveal"><span>03</span><svg><use href="#i-server"/></svg><div><strong>Phần mềm trung tâm</strong><small>Bản đồ · AI · API · Quản trị</small></div></div></div>
+      <div class="arch-diagram reveal"><img src="assets/diagrams/system-architecture.svg" alt="Sơ đồ kiến trúc đề xuất từ thiết bị trên tàu qua 3G/4G đến phần mềm trung tâm: xử lý dữ liệu, GIS, AI và API" loading="lazy"/><div class="diagram-caption"><svg><use href="#i-layers"/></svg><span>Sơ đồ kiến trúc khái quát theo yêu cầu nhiệm vụ, không phải bản thiết kế chi tiết của hệ thống đã triển khai.</span></div></div>
+    </div></section>
+
+    <section class="section features-section" id="tinh-nang" aria-labelledby="featuresTitle"><div class="container"><div class="section-heading section-heading--split reveal"><div><div class="section-kicker"><span class="kicker-line"></span> 04 — CHỨC NĂNG ĐỊNH HƯỚNG</div><h2 id="featuresTitle">Được nghiên cứu để <span class="gradient-text">hỗ trợ vận hành.</span></h2></div><p>Các nhóm chức năng được xác định từ yêu cầu khoa học và kỹ thuật của nhiệm vụ.</p></div>
+      <div class="feature-grid"><article class="feature-card reveal"><div class="feature-icon"><svg><use href="#i-location"/></svg></div><div class="feature-num">01</div><h3>Theo dõi hành trình</h3><p>Thu thập vị trí và hỗ trợ giám sát hành trình đoàn tàu theo thời gian thực.</p></article>
+      <article class="feature-card reveal"><div class="feature-icon"><svg><use href="#i-database"/></svg></div><div class="feature-num">02</div><h3>Thu thập đa cảm biến</h3><p>Kết nối dữ liệu định vị, IMU, cảm biến rung và camera AI từ thiết bị trên tàu.</p></article>
+      <article class="feature-card reveal"><div class="feature-icon"><svg><use href="#i-map"/></svg></div><div class="feature-num">03</div><h3>Trực quan hóa bản đồ</h3><p>Hiển thị vị trí, hành trình, trạng thái và hỗ trợ tra cứu trên bản đồ số.</p></article>
+      <article class="feature-card reveal"><div class="feature-icon"><svg><use href="#i-brain"/></svg></div><div class="feature-num">04</div><h3>Hỗ trợ phân tích AI</h3><p>Nghiên cứu dự báo thời gian đi/đến, phát hiện dấu hiệu bất thường.</p></article>
+      <article class="feature-card reveal"><div class="feature-icon"><svg><use href="#i-gear"/></svg></div><div class="feature-num">05</div><h3>Tích hợp hệ thống</h3><p>Hướng tới trao đổi dữ liệu với hệ thống điều hành vận tải hiện có qua API.</p></article>
+      <article class="feature-card reveal"><div class="feature-icon"><svg><use href="#i-chart"/></svg></div><div class="feature-num">06</div><h3>Quản trị và báo cáo</h3><p>Hỗ trợ quản lý người dùng, tra cứu, thống kê và tổng hợp thông tin.</p></article></div>
+    </div></section>
+
+    <section class="section demo-section" id="mo-phong" aria-labelledby="demoTitle"><div class="container demo-grid"><div class="demo-copy reveal"><div class="section-kicker"><span class="kicker-line"></span> 05 — TRỰC QUAN HÓA</div><h2 id="demoTitle">Hình dung hành trình trên <span class="gradient-text">một giao diện duy nhất.</span></h2><p>Mô hình minh họa cho cách phần mềm có thể tổ chức dữ liệu hành trình, vị trí và trạng thái đoàn tàu để phục vụ theo dõi và điều hành.</p><div class="demo-disclaimer"><svg><use href="#i-shield"/></svg><span><strong>Dữ liệu minh họa</strong><br/>Sơ đồ và thông tin trong khu vực này chỉ mô phỏng ý tưởng giao diện, không phải dữ liệu vận hành thực tế.</span></div><a href="#san-pham" class="text-link">Xem sản phẩm dự kiến <svg><use href="#i-arrow"/></svg></a></div>
+      <div class="demo-visual reveal"><div class="demo-frame-title"><span class="demo-live-dot"></span> PREVIEW / RAIL MONITOR <strong>DEMO VIEW</strong></div><img src="assets/diagrams/monitoring-demo.svg" alt="Mô phỏng giao diện theo dõi đường đi đoàn tàu trên bản đồ số với các thông số đều là minh họa" loading="lazy" /><span class="demo-watermark">DEMO · KHÔNG PHẢI DỮ LIỆU THỰC</span></div></div></section>
+
+    <section class="section outputs-section" id="san-pham" aria-labelledby="outputsTitle"><div class="container"><div class="section-heading centered reveal"><div class="section-kicker"><span class="kicker-line"></span> 06 — SẢN PHẨM DỰ KIẾN</div><h2 id="outputsTitle">Từ nghiên cứu tới <span class="gradient-text">giá trị ứng dụng.</span></h2><p>Các chỉ tiêu dưới đây trích từ phụ lục nhiệm vụ nghiên cứu; không hàm ý đã hoàn thành hoặc nghiệm thu.</p></div>
+      <div class="output-layout"><div class="output-primary reveal"><div class="output-icon"><svg><use href="#i-server"/></svg></div><div class="output-bignum">01</div><h3>Hệ thống giám sát hành trình</h3><p>Theo dõi, giám sát hành trình đoàn tàu theo thời gian thực và trực quan hóa trên nền bản đồ số, ứng dụng IoT, GIS và AI.</p><span class="output-pill">SẢN PHẨM CÔNG NGHỆ ĐỊNH HƯỚNG</span></div><div class="output-secondary"><article class="output-mini reveal"><div class="out-icon"><svg><use href="#i-file"/></svg></div><strong>03</strong><h3>Bài báo khoa học</h3><p>01 bài hướng tới WoS/Scopus và 02 bài thuộc danh mục được tính điểm của Hội đồng Giáo sư Nhà nước.</p></article><article class="output-mini reveal"><div class="out-icon"><svg><use href="#i-layers"/></svg></div><strong>04 nhóm</strong><h3>Tài liệu chuyên môn</h3><p>Giải pháp công nghệ; phân tích thiết kế; hướng dẫn sử dụng; báo cáo thử nghiệm.</p></article><article class="output-mini reveal"><div class="out-icon"><svg><use href="#i-train"/></svg></div><strong>02 + 02</strong><h3>Chỉ tiêu thử nghiệm</h3><p>Đánh giá thực tế với tối thiểu 02 đoàn tàu và 02 tuyến đường sắt.</p></article><article class="output-mini reveal"><div class="out-icon"><svg><use href="#i-users"/></svg></div><strong>02</strong><h3>Học viên thạc sĩ</h3><p>Hỗ trợ đào tạo trong các chuyên ngành Công nghệ thông tin, Điện tử - Viễn thông, Tự động hóa.</p></article></div></div>
+      <p class="output-note"><svg><use href="#i-shield"/></svg><span>Phụ lục còn có yêu cầu đăng ký bảo hộ quyền sở hữu trí tuệ. Trạng thái của các sản phẩm cần được cập nhật từ nhóm thực hiện trước khi công bố thành tựu.</span></p>
+    </div></section>
+
+    <section class="application-section" id="ung-dung" aria-labelledby="applicationTitle"><div class="container app-inner"><div class="application-title reveal"><div class="section-kicker section-kicker--light"><span class="kicker-line"></span> 07 — ĐỊNH HƯỚNG ỨNG DỤNG</div><h2 id="applicationTitle">Hướng tới một hệ sinh thái dữ liệu <em>đường sắt thông minh.</em></h2></div><div class="application-text reveal"><p>Giải pháp hướng tới hỗ trợ các đơn vị quản lý và điều hành vận tải tiếp cận dữ liệu hành trình tập trung, nâng cao khả năng quan sát, hỗ trợ điều độ và tạo cơ sở cho nghiên cứu ứng dụng AI trong vận tải đường sắt.</p><div class="app-keywords"><span>Giám sát tập trung</span><span>Hỗ trợ điều hành</span><span>Phân tích dữ liệu</span></div></div></div></section>
+
+    <section class="closing-section" id="lien-he" aria-labelledby="closingTitle"><div class="closing-art" aria-hidden="true"></div><div class="container closing-inner reveal"><div class="section-kicker section-kicker--light"><span class="kicker-line"></span> KẾT NỐI NGHIÊN CỨU & CÔNG NGHỆ</div><h2 id="closingTitle">Cùng mở ra những hành trình <span>thông minh hơn.</span></h2><p>Đồng hành cùng hoạt động nghiên cứu, phát triển và ứng dụng công nghệ số trong lĩnh vực giao thông đường sắt.</p><p class="contact-note">Thông tin đơn vị chủ trì và đầu mối liên hệ sẽ được cập nhật sau khi được xác nhận chính thức.</p><a href="#trang-chu" class="btn btn-primary">Về đầu trang <span aria-hidden="true">↑</span></a></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-main"><div><a href="#trang-chu" class="footer-brand"><svg><use href="#i-train"/></svg><strong>RAIL<span>MONITOR</span></strong></a><p>Giới thiệu định hướng nghiên cứu hệ thống theo dõi, giám sát hành trình đoàn tàu theo thời gian thực ứng dụng IoT, GIS và AI.</p></div><div class="footer-links"><strong>Khám phá</strong><a href="#tong-quan">Tổng quan</a><a href="#cong-nghe">Công nghệ</a><a href="#kien-truc">Kiến trúc</a><a href="#san-pham">Sản phẩm dự kiến</a></div><div class="footer-links"><strong>Lưu ý</strong><span>Nội dung kỹ thuật thể hiện yêu cầu và định hướng nghiên cứu theo phụ lục nhiệm vụ.</span><span>Hình ảnh cảnh quan được tạo bằng AI nhằm mục đích minh họa.</span></div></div><div class="container footer-bottom"><span>© <span id="year">2026</span> RAIL MONITOR · Website giới thiệu dự án nghiên cứu</span><span>Thiết kế cho đường sắt thông minh <span aria-hidden="true">✦</span></span></div></footer>
+</body>
+</html>
